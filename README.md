@@ -69,3 +69,20 @@ createApp(App).use(router)
 npm install @router4.0.4
 or
 vue add router
+
+##### install axios
+
+全局引入main.ts中
+```javascript
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router/index'
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css'
+import axios from 'axios'; //引入axios
+
+const app = createApp(App);
+app.use(router).mount('#app')
+app.use(Antd)
+app.config.globalProperties.$axios=axios //挂在到vue上面
+```
