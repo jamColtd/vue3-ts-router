@@ -23,6 +23,7 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
+import axios from 'axios'
 export default defineComponent({
   name:'menus',
   async setup(){
@@ -34,11 +35,13 @@ export default defineComponent({
       return 
     }
 
-    
+    const getMenusList = await axios.get('http://localhost:3000/menus')
+    console.log(getMenusList)
 
     return{
       select,
-      openChange
+      openChange,
+      getMenusList
     }
   }
 })
