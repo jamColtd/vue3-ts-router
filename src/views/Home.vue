@@ -5,7 +5,15 @@
       <menuHome /> <!-- 菜单-->
     </a-layout-sider>
     <a-layout>
-      <a-layout-header style="background: #fff; padding: 0" />
+      <a-layout-header 
+        style="
+          background: #fff; 
+          padding: 0;
+          height: 48px;
+          line-height:48px"
+        >
+        <headerV />
+      </a-layout-header>
       <a-layout-content style="margin: 0 16px">
         <a-breadcrumb style="margin: 16px 0">
           <a-breadcrumb-item>User</a-breadcrumb-item>
@@ -26,12 +34,14 @@
 // @ is an alias to /src
 import { defineComponent, ref } from 'vue';
 import menuHome from '../common/menus.vue'
+import headerV from '../common/header.vue'
 import axios from 'axios'
 
 export default defineComponent({
   name: 'Home',
   components:{
-    menuHome
+    menuHome,
+    headerV
   },
   setup() {
 

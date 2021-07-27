@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
+/**导航菜单 */
 <template>
     <a-menu theme="dark" 
       :selectedKeys="selectedKeys" 
       mode="inline"
       :openKeys="openKeys"
-      @click='select'
       @openChange='openChange'
     >
         <a-sub-menu v-for="item in mnusList" :key="item.title" :index="item.title">
@@ -14,7 +14,12 @@
               <span>{{item.title}}</span>
             </span>
           </template>
-          <a-menu-item v-for="childItem in item.child" :key="childItem.href" :index="childItem.title">{{childItem.title}}</a-menu-item>
+          <a-menu-item 
+            v-for="childItem in item.child"  
+            :key="childItem.title" 
+            :index="childItem.title"
+            @click='MenuItem(childItem)'
+          >{{childItem.title}}</a-menu-item>
           <!-- <a-menu-item key="4">Bill</a-menu-item>
           <a-menu-item key="5">Alex</a-menu-item> -->
         </a-sub-menu>
@@ -28,16 +33,25 @@ import axios from 'axios'
 export default defineComponent({
   name:'menus',
   setup(){
-    const select = () => {
+    const { globalProperties } = useCurrentInstance();
+    
+    /*点击标签跳转的页面*/
+    const MenuItem = (item:any) => {
+      globalProperties.$router.push(item.href)
+    }
+
+    /**点击父标签 */
+    const openChange = () => {
       return
     }
 
-    const openChange = () => {
-      return 
+    /**点击时触发的事件 */
+    const select = () => {
+      console.log("select")
     }
 
-    const { globalProperties } = useCurrentInstance();
     let mnusList = ref<string>('');
+    // 获取菜单
     const getMenusList = axios.get('http://localhost:3000/menus')
       .then((res) => {
           // 因为层级比较深，匿名函数会导致this指向发生改变
@@ -51,9 +65,10 @@ export default defineComponent({
       
 
     return{
-      select,
+      MenuItem,
       openChange,
       mnusList,
+      select
     }
   }
 })
