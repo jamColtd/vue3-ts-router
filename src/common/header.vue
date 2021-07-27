@@ -41,12 +41,12 @@ export default defineComponent({
 <style scoped>
 ul{
     display: hidden;
-    padding: 0 30px;
+    padding: 0 10px;
     float: right;
 }
 ul >li{
     float: left;
-    margin-right:30px
+    margin-right:10px
 }
 
 </style>

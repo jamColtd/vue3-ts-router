@@ -19,9 +19,9 @@
           <a-breadcrumb-item>User</a-breadcrumb-item>
           <a-breadcrumb-item>mbuil</a-breadcrumb-item>
         </a-breadcrumb>
-        <div :style="{ padding: '24px', background: '#fff', minHeight: '360px' }">
+        <!-- <div :style="{ padding: '24px', background: '#fff', minHeight: '360px' }"> -->
           <router-view />
-        </div>
+        <!-- </div> -->
       </a-layout-content>
       <a-layout-footer style="text-align: center">
         人力资源
