@@ -24,7 +24,7 @@
         </div>
       </a-layout-content>
       <a-layout-footer style="text-align: center">
-        Ant Design ©2018 Created by Ant UED
+        人力资源
       </a-layout-footer>
     </a-layout>
   </a-layout>

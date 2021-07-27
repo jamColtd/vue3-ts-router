@@ -22,7 +22,9 @@
                 {"hasPermission": "PAYMENTSYS_PAGE", "title": "薪酬配置", "icon": "", "href": "#/payment/paymentSys", "current": ""}
             ]},
             {"hasPermission": "APP_MANAGEMENT", "title": "APP管理", "icon": "ic-proj", "href": "", "current": "", "opened": "", "child": []},
-            {"hasPermission": "SYS_MANAGEMENT", "title": "系统管理", "icon": "ic-sys", "href": "/sys", "current": "", "opened": "", "child": []}
+            {"hasPermission": "SYS_MANAGEMENT", "title": "系统管理", "icon": "ic-sys", "href": "/sys", "current": "", "opened": "", "child": [
+                {"hasPermission": "PAYMENTSYS_PAGE", "title": "系统设置", "icon": "", "href": "/paymentsysPage", "current": ""}
+            ]}
         ]
     }
 }

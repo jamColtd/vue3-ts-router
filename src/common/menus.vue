@@ -11,7 +11,7 @@
           <template #title>
             <span>
               <user-outlined /> 
-              <span>{{item.title}}</span>
+              <span style="font-weight:bold">{{item.title}}</span>
             </span>
           </template>
           <a-menu-item 
