@@ -1,14 +1,15 @@
 // index.ts
 import axios from "axios";
-import {getCurrentInstance, ref} from 'vue'
-import  {message}  from "ant-design-vue";
+// import {getCurrentInstance, ref} from 'vue'
+// import  {message}  from "ant-design-vue";
 import router from "@/router/index";
 import useCurrentInstance from "../hook/useCurrentInstance";
 
 const { globalProperties } = useCurrentInstance();
+const _message = globalProperties.$message;
 
-const messages = (msg: string,type?: any) => {    
-  globalProperties.$message({
+const message = (msg: string,type?: any) => {    
+  _message({
       message: msg,
       type: type || 'warning',
       duration:1500,
@@ -39,19 +40,19 @@ const errorHandle = (status: number, other: string) => {
     // 403 token过期
     // 清除token并跳转登录页
     case 403:
-    //   message('登录过期，请重新登录');
-    //   localStorage.removeItem('token');
-    //   store.commit('token', null);
-    //   setTimeout(() => {
-    //     toLogin();
-    //   }, 1000);
+      message('登录过期，请重新登录');
+      localStorage.removeItem('token');
+      // store.commit('token', null);
+      setTimeout(() => {
+        toLogin();
+      }, 1000);
       break;
     // 404请求不存在
     case 404:
-    //   message('请求的资源不存在');
+      message('请求的资源不存在');
       break;
     default:
-    //   message(other);
+      message(other);
   }
 }
 
@@ -67,9 +68,9 @@ const instance = axios.create({
   timeout: 1000 * 30,
   // 请求的base地址 TODO:这块以后根据不同的模块调不同的api
     // baseURL:
-    //   process.env.NODE_ENV === "development"
-    //     ? "测试"
-    //     : "正式",
+      // process.env.NODE_ENV === "development"
+      //   ? "测试"
+      //   : "正式",
   withCredentials: true,
 })
 
