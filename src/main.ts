@@ -1,7 +1,7 @@
-import { createApp } from 'vue'
+import { createApp} from 'vue'
 import App from './App.vue'
 import router from './router/index'
-import Antd from 'ant-design-vue'
+import Antd, { message } from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 import axios from 'axios';
 // import api from "../src/axios/api";
@@ -10,7 +10,8 @@ const app = createApp(App);
 app.use(router).mount('#app')
 app.use(Antd)
 // app.use(api)
-app.config.globalProperties.$axios=axios
+app.config.globalProperties.$axios=axios;
+app.config.globalProperties.$message = message;
 
 
 // // 前置钩子

@@ -1,16 +1,19 @@
 // index.ts
 import axios from "axios";
+import {getCurrentInstance, ref} from 'vue'
 import  {message}  from "ant-design-vue";
 import router from "@/router/index";
+import useCurrentInstance from "../hook/useCurrentInstance";
 
+const { globalProperties } = useCurrentInstance();
 
-// const messages = (msg: string,type?: any) => {    
-//     message({
-//       message: msg,
-//       type: type || 'warning',
-//       duration:1500,
-//     });
-// }
+const messages = (msg: string,type?: any) => {    
+  globalProperties.$message({
+      message: msg,
+      type: type || 'warning',
+      duration:1500,
+  });
+}
 
 /** 
  * 跳转登录页
