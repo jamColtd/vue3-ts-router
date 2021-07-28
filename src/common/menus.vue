@@ -60,7 +60,7 @@ export default defineComponent({
           globalProperties.$message.success('数据获取成功！！！')
       }).catch( (error) => {
         console.log(error)
-            alert('网络超时, 请重新加载!')
+            globalProperties.$message.error('网络超时, 请重新加载!')
       });
       
 

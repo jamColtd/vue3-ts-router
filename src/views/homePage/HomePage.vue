@@ -5,13 +5,18 @@
                 style="
                     width: 100%;
                     height: 160px;
-                    background: blue;
+                    background: #fff;
                     border-radius: 8px;
                 "
             >
-                <div class="single">
-                    
-                </div>
+            </div>
+            <div
+                style="width:100%;
+                margin:10px 0"
+            >
+                <ul>
+                    <li><span>代办事项</span></li>
+                </ul>
             </div>
         </a-col>
         <a-col :span="9" style="padding:10px">
