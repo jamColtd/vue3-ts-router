@@ -13,7 +13,7 @@
                     />
                 </li>
                 <li><span>用户名</span></li>
-                <li><router-link to="/login">退出系统</router-link></li>
+                <li><router-link to="/">退出系统</router-link></li>
             </ul>
         </a-col>
   </a-row>

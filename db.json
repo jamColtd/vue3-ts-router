@@ -10,7 +10,8 @@
                 {"hasPermission": "LEAVE_PAGE", "title": "离职管理", "icon": "", "href": "#/hrsp/leave", "current": ""},
                 {"hasPermission": "CONTRACT_PAGE", "title": "合同续签", "icon": "", "href": "#/hrsp/contract", "current": ""},
                 {"hasPermission":"", "title": "调动管理", "icon": "", "href": "", "current": ""},
-                {"hasPermission": "BLACKLIST_PAGE", "title": "工人数据维护", "icon": "", "href": "#/blacklist/update", "current": ""}
+                {"hasPermission": "BLACKLIST_PAGE", "title": "工人数据维护", "icon": "", "href": "#/blacklist/update", "current": ""},
+                {"hasPermission": "BLACKLIST_PAGE", "title": "校招助手", "icon": "", "href": "#/blacklist/update", "current": ""}
             ]},
             {"hasPermission": "SALARY_MANAGEMENT", "title": "薪酬管理", "icon": "ic-kpi", "href": "", "current": "", "opened": "", "child": [
                 {"hasPermission": "SOCIETYFUNDLIST_PAGE", "title": "社保与公积金", "icon": "", "href": "#/payment/societyFundList", "current": ""},
