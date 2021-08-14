@@ -1,9 +1,7 @@
 <template>
     <a-row>
-        <a-col :span="8"></a-col>
-        <a-col :span="8"></a-col>
-        <a-col :span="8">
-            <ul>
+        <a-col :span="24">
+            <ul style="min-width:400px">
                 <li>
                     <a-input-search
                         v-model:value="value"

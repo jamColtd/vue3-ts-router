@@ -10,7 +10,8 @@
           background: #fff; 
           padding: 0;
           height: 48px;
-          line-height:48px"
+          line-height:48px;
+          min-width:400px"
         >
         <headerV />
       </a-layout-header>

@@ -1,5 +1,5 @@
 <template>
-    <a-row>
+    <a-row style="min-width:400px">
         <a-col :span="15" style="padding:10px">
             <div 
                 style="
