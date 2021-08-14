@@ -6,12 +6,18 @@ import 'ant-design-vue/dist/antd.css'
 import axios from 'axios';
 import api from "../src/axios/api";
 
+
 const app = createApp(App);
 app.use(router).mount('#app')
 app.use(Antd)
 // app.use(api)
 app.config.globalProperties.$axios=axios;
 app.config.globalProperties.$message = message;
+message.config({
+    duration: 2,// 持续时间
+    top:`100px`, // 到页面顶部距离
+    maxCount: 3 // 最大显示数, 超过限制时，最早的消息会被自动关闭
+});
 
 
 // // 前置钩子

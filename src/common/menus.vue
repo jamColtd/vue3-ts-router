@@ -68,7 +68,8 @@ export default defineComponent({
       MenuItem,
       openChange,
       mnusList,
-      select
+      select,
+      getMenusList
     }
   }
 })

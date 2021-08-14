@@ -27,5 +27,11 @@
                 {"hasPermission": "PAYMENTSYS_PAGE", "title": "系统设置", "icon": "", "href": "/paymentsysPage", "current": ""}
             ]}
         ]
+    },
+    "login":{
+        "user": [
+            {"user": "admin", "password": "123456"},
+            {"user": "psadmin", "password": "123456"}
+        ]
     }
 }

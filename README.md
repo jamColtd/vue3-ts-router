@@ -145,3 +145,5 @@ const { ctx } = getCurrentInstance()
 
 const { proxy } = getCurrentInstance()
 ```
+
+##### axios统一状态管理

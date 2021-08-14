@@ -22,7 +22,7 @@
               <div class="table-cell">密码</div>
               <div class="table-cell">
                 <input
-                  type="text"
+                  type="password"
                   class="input-md30 font-but input-text"
                   placeholder="Password"
                   v-model="formData.password"
@@ -54,19 +54,33 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
-import router from '../router/index'
+import { defineComponent, ref} from "vue";
+import useCurrentInstance from "../hook/useCurrentInstance";
+import {getGetrequs } from "../../src/axios/request";
+import router from "../router"
 
 export default defineComponent({
   name: "login",
   setup() {
+    const { globalProperties } = useCurrentInstance();
     const formData = ref({
       user:"",
       password:""
     })
     const formPath = ref('')
-
-    const onClick = (() => {
+    let getUser = ref();
+     const  onClick = (() => {
+      getGetrequs({ t35: "get" }).then((res) => {
+        getUser.value = res;
+        console.log(formData.value.user, formData.value.password)
+        getUser.value.user.forEach((element:unknown) => {
+          console.log(element)
+        });
+        globalProperties.$message.success("登录成功")
+      }).catch( (error) => {
+        console.log(error);
+        globalProperties.$message.error('密码错误！！')
+      });
       router.push({
         path:'/home'
       })
@@ -75,7 +89,7 @@ export default defineComponent({
     return {
       formData,
       onClick,
-      formPath
+      formPath,
     };
   },
 });
